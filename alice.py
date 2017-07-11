@@ -24,11 +24,6 @@ def reply(fulltext):
     # Toddlers are horrible
     if random.random() > 0.95:
         return 'You smell!'
-
-    # Respond appropriately to emoticons
-    emoticons = re.findall("[:;]'?-?[\WpPoO0xXsSbBD]", text)
-    if len(emoticons) > 0:
-        return ':-D'
     
     text = fulltext.lower()
     # Get the word before the first space
@@ -38,7 +33,12 @@ def reply(fulltext):
         first_word = re.findall('^\w+', first_word)[0]
     except:
         first_word = ''
-        
+
+    # Respond appropriately to emoticons
+    emoticons = re.findall("[:;]'?-?[\WpPoO0xXsSbBD]", text)
+    if len(emoticons) > 0:
+        return ':-D'
+    
     # Say something, silly
     if text == '' or first_word == '':
         return "I'm bored"
