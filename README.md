@@ -21,4 +21,4 @@ Alice is a chatbot that simulates the conversational skills of a three year old.
 
 ## Example usage
 
-![](alice.png)
+![](image.png)
