@@ -26,9 +26,16 @@ def reply(fulltext):
         return 'You smell!'
     
     text = fulltext.lower()
-
+    # Get the word before the first space
+    first_word = text.split(' ')[0]
+    # Get the characters before the first bit of punctuation
+    try:
+        first_word = re.findall('^\w+', first_word)[0]
+    except:
+        first_word = ''
+        
     # Say something, silly
-    if text == '':
+    if text == '' or first_word == '':
         return "I'm bored"
 
     if text.startswith('hello') or text.startswith('hi'):
@@ -46,11 +53,6 @@ def reply(fulltext):
                      "whats your age"]:
         if question in text:
             return 'Three and one quarter'
-
-    # Get the word before the first space
-    first_word = text.split(' ')[0]
-    # Get the characters before the first bit of punctuation
-    first_word = re.findall('^\w+', first_word)[0]
 
     # If asked for information...
     if first_word in ['who', 'what', 'where', 'why', 'when', 'how', 'which']:
