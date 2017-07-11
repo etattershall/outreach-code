@@ -5,8 +5,6 @@ Give the students the chatbot interface and the base.py version and let them rev
 ## Example enhancements
 
 - Create a personality dictionary and use it to answer questions
-
-	e.g. 
 	```python
 		chatbot = {
 			'age': 14,
@@ -19,7 +17,6 @@ Give the students the chatbot interface and the base.py version and let them rev
 - Use python's regular expressions library to deal with variations in spelling and phrasing (use "import re"). Tutorial: https://regexone.com/ 
 
 - Remember previous topics and questions
-	e.g.
 	```python
 		What's your name?
 		>>> I already told you that!
