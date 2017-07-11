@@ -18,3 +18,7 @@ Alice is a chatbot that simulates the conversational skills of a three year old.
 - Extract the files
 - Double click on alice.py to run in the terminal
 - Chat!
+
+## Example usage
+
+![](alice.png)
