@@ -1,5 +1,5 @@
 # Toddler chatbot
-
+```
                   ___
                 /-|||-\ 
                /| . . |\
@@ -7,7 +7,7 @@
              >o<  | |  >o<
              
                  ALICE
-
+```
 Alice is a chatbot that simulates the conversational skills of a three year old. This code was created for demonstration and teaching purposes for STFC's Summer Coding Week 2017.
 
 ## Requirements
