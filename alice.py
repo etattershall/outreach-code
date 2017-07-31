@@ -21,28 +21,32 @@ def reply(fulltext):
     '''
         Function takes a text string and calculates an appropriate reply
     '''
-    # Toddlers are horrible
+    # 5% chance of responding with an insult (toddlers are horrible)
     if random.random() > 0.95:
         return 'You smell!'
     
+    # Make the text lowercase so that capital letters (and the lack therof)
+    # don't confuse the program    
     text = fulltext.lower()
-    # Get the word before the first space
-    first_word = text.split(' ')[0]
-    # Get the characters before the first bit of punctuation
+    # Get the characters before the first space.
+    first_token = text.split(' ')[0]
+    # Now find all the actual letters before the first piece of punctuation.
     try:
-        first_word = re.findall('^\w+', first_word)[0]
+        first_word = re.findall('^\w+', first_token)[0]
     except:
         first_word = ''
 
     # Respond appropriately to emoticons
-    emoticons = re.findall("[:;]'?-?[\WpPoO0xXsSbBD]", text)
+    emoticons = re.findall("[:;]'?-?[\Wpo0xsb]", text)
     if len(emoticons) > 0:
         return ':-D'
     
-    # Say something, silly
+    # If the user has not put in any text input (e.g. they have submitted a 
+    # emoty string or punctuation only), prompt them for input again.
     if text == '' or first_word == '':
         return "I'm bored"
 
+    # Make polite conversation
     if text.startswith('hello') or text.startswith('hi'):
         return 'Hi'
 
@@ -59,7 +63,7 @@ def reply(fulltext):
         if question in text:
             return 'Three and one quarter'
 
-    # If asked for information...
+    # If asked for other information...
     if first_word in ['who', 'what', 'where', 'why', 'when', 'how', 'which']:
         # Repeat the question back
         if text[-1] == '?':
